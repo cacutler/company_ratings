@@ -24,7 +24,7 @@ app.get("/company-ratings/:id", async (request, response) => {
 })
 app.post("/company-ratings", async (request, response) => {
     try {
-        let newRating = new model.CompanyRating({name: request.body.name, rating: parseInt(request.body.rating), review: request.body.rating})
+        let newRating = new model.CompanyRating({name: request.body.name, rating: parseInt(request.body.rating), review: request.body.review})
         let error = newRating.validateSync()
         if (error) {
             response.status(400).json(error)
